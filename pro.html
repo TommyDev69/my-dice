@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../boot/bootstrap.min.css">
+</head>
+<body>
+    <!-- <div id="root"></div> -->
+    <input type="text" class="custom-select form-control" name="" value ='dfg' id="looter">
+   <select name="" id="loter">
+    <!-- <option></option> -->
+
+   </select>
+    <script>
+        var pick = document.getElementById('loter')
+
+        let obj = [
+            { name : 'gucci'},
+           {name : 'versace'},
+            {name : 'dior'},
+           { name : 'fendi'},
+        ]
+        for (let i = 0; i < obj.length; i++) {
+            pick.innerHTML += `<option> ${obj[i].name} </option>`
+
+        }
+
+</script>
+</body>
+</html>
+
+
+
+
+
+

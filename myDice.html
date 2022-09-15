@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../boot/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/brands.min.css">
+
+
+</head>
+<style>
+    .overall{
+        background: linear-gradient(#753682 0%,#bf2e34 100%);
+        height:800px;
+    }
+
+    .rader{
+        border-radius:50px;
+    }
+
+    .col-6{
+        height: 550px;
+    }
+
+    .fir{
+        background-color: rgba(255, 255, 255, 0.717);;
+        border-top-left-radius:10px;
+        border-bottom-left-radius:10px;
+        margin-top:5%;
+    }
+
+    .second{
+        background-color:rgba(255, 255, 255, 0.4);
+        border-top-right-radius:10px;
+        border-bottom-right-radius:10px;
+        margin-top:5%;
+
+    }
+
+    .words{
+        font-size:36px;
+        font-family:sans-serif;
+        word-spacing:1rem;
+        margin-top:70px;
+    }
+
+    .tech{
+        font-size:78px;
+        font-weight: 100px;
+        color: #bf2e34;
+        padding-bottom:25px;
+        
+
+    }
+    .current{
+        background-color: #c7365f;
+        width:40%;
+        height:120px;
+        border-radius:10px;
+        /* margin-top:17%; */
+        margin-left:25%;
+        padding-top:23px;
+        margin-top:50px;
+
+
+    }
+    .curr{
+        font-size:23px;
+        padding-bottom:1px;
+    }
+    .count{
+        font-size:35px;
+        
+    }
+    .count1{
+        font-size:35px;
+        padding-top:45px;
+    }
+
+    .bot{
+        position: absolute;
+        left:-85px;
+        margin: 0;
+        height:50px;
+        font-size:25px;
+        opacity: 0.7;
+
+
+    }
+    .bot2{
+        position: absolute;
+        left:-85px;
+        margin-top:10%;
+        height:50px;
+        font-size:16px;
+        opacity: 0.7;
+        /* width:5%; */
+        
+
+    }
+    .bot3{
+        position: absolute;
+        left:-70px;
+        width:25%;
+        margin-top:120px;
+        height:45px;
+        font-size:17px;
+        opacity: 0.7;
+        
+        
+    }
+
+    .curr1{
+        font-size:23px;
+       
+    }
+
+    .current1{
+        background-color: #c7365f;
+        width:40%;
+        height:100px;
+        border-radius:10px;
+        margin-top:12%;
+        margin-left:25%;
+        opacity:0.8;
+    }
+
+  @media only screen and (max-width: 708px) {
+  /* For mobile phones: */
+   [class*="curr"] {
+       width: 55%;
+    }
+
+   [class*="bot2"] {
+        width: 59%; 
+        font-size:10px;    
+        margin-top:30%;
+        margin-left:50px;
+        height:50px;
+        font-weight: bolder;
+        opacity: 0.7;
+    }
+
+  [class*="bot3"] {
+        width: 59%;
+        margin-top:70%;
+        margin-left:40px;
+        height:50px;
+        font-weight: bolder;
+        font-size:10px;
+        opacity: 0.7;
+    }
+
+  [class*="current1"] {
+        margin-left:40%;
+        margin-top:50%;
+    } 
+
+}
+    
+</style>
+<body>
+    <div class="container-fluid overall">
+        <div class="container wrap">
+            <div class="row ">
+                <div class="col-6 pt-5 fir">
+                    <h1 class="text-center font-weight-bold words">PLAYER 1</h1>
+                    <div class="text-center  tech">0</div>
+
+                    <div class="current badge text-light font-weight-lighter  border-0">
+                        <h3 class=" text-md text-center font-weight-lighter curr">current</h3>
+                        <h3 class="text-light pb-5 count">0</h3>
+                    </div>
+                </div>
+                
+                <div class="col-6 pt-5 second">
+                    <button type="button" class="rounded-pill bot border-0  pl-3">🔄 new game </button>
+                    <h1 class="text-center font-weight-bold words">PLAYER 2</h1>
+                    <div class="text-center tech">0</div>
+
+                    <button type="button" class=" col-md-4 col-xsm-7 text-center  rounded-pill bot2 border-0">🎲 ROLL DICE</button>
+                    <button type="button" class="bot3 pl-1   text-center rounded-pill border-0">📥 Hold</button>
+
+                    <div class="current1 badge text-light font-weight-lighter  border-0">
+                         <h3 class="text-light text-center  pb-5 count1">0</h3>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src="../boot/bootstrap.bundle.min.js"></script>
+    <script src="../boot/jquery.slim.min.js"></script>
+    <script src="../boot/popper.min.js"></script>
+
+    <script>
+        // if (! function_exists('fa_custom_setup_kit') ) {
+        //     function fa_custom_setup_kit($kit_url = '') {
+        //         foreach ( [ 'wp_enqueue_scripts', 'admin_enqueue_scripts', 'login_enqueue_scripts' ] as $action ) {
+        //         add_action(
+        //             $action,
+        //             function () ( $kit_url ){
+        //             wp_enqueue_script( 'font-awesome-kit', $kit_url, [], null );
+        //             }
+        //         );
+        //         }
+        //     }
+        // }
+    </script>
+    
+</body>
+</html>

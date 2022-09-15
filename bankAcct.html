@@ -1,0 +1,217 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <br><br><br>
+    
+    <div> <br>
+        <p id="response"></p> <br><br>
+        <input type="number" id="balanceInput" >
+        <p id="AcccName"> </p>
+        <br>
+        <input type="number" id="AccNo" onkeyup="ActiveBtn(event)"> <br> <br>
+        <label for="">Account Status</label>
+        
+        <select name="" id="activeAccount">
+            <option value="1">True</option>
+            <option value="0">False</option>
+        </select>
+        <br>
+        <label for="">Balance sheet</label>
+        <select name="" id="balanceAccount">
+            <option value="1">True</option>
+            <option value="0">False</option>
+        </select>
+        <br><br>
+        <input type="button" value="Check Balance" onclick="Aisha(event)">
+    </div>
+   <!-- <select name="" id="slot"></select> -->
+   
+
+   
+    <script src="index.js">
+        let store = document.getElementById('slot');
+        // let fastlink = [{phone:"Tecno", amount:"$400"},
+        //                 {phone:"Itel", amount:"$300"},
+        //                 {phone:"iPhone", amount:"$1000"},
+        //                 {phone:"Samsung", amount:"$800"}]
+        // for (let i = 0; i < fastlink.length; i++) {
+        //     store.innerHTML += `<option>${fastlink[i].phone} ${fastlink[i].amount}</option>`
+        //    console.log(fastlink[i]);
+    // }
+
+
+let accountDetails = [
+    {AccountName: "Tomiwa", acctNumber: "78222876419"},
+    {AccountName: "Faruq", acctNumber: "0429780038"},
+    {AccountName: "Aisha", acctNumber: "0211191554"},
+    {AccountName: "Temitope", acctNumber: "0691773047"},
+    {AccountName: "Temmy", acctNumber: "0037364268"},
+    {AccountName: "AY", acctNumber: "0112479267"},
+
+] 
+
+function ActiveBtn(event) {
+    var AcctName = document.getElementById("AcccName");
+
+    
+    let userId = event.target.value
+    let message = "";
+    for (let index = 0; index < accountDetails.length; index++) {
+        if(userId.length < 10){
+            message= "is less than the digit"
+        } else if(userId.length > 10){
+            message = "more than the digit"
+        }
+
+        else{
+            if(accountDetails[index].acctNumber ==userId){
+                AcctName.innerHTML = accountDetails[index].AccountName
+                break;
+            }
+            else {
+                message ="invalid account details";
+            }
+        }
+
+        AcctName.innerHTML = message
+        
+    }
+
+
+}
+
+
+
+
+
+function Aisha(event){
+    
+    let response = document.getElementById("response")
+    let balance = document.getElementById("activeAccount").value
+    let bringBalance = document.getElementById("balanceAccount").value
+    let balancesheet = document.getElementById("balanceInput").value
+    let balanceshit = Number(balancesheet)
+
+    // console.log('i am in');
+    
+    if(balance== true){
+        if(bringBalance ==true && balancesheet > 0){
+            response.innerHTML = "Your balance is $" + balanceshit
+
+            // console.log(response);
+        } else if(bringBalance==false){
+            response.innerHTML = "Your account is no longer active"
+        }
+        else if(balancesheet==0){
+            response.innerHTML = "Insufficent fund or your acct is empty"
+        } else if (balancesheet< 0){
+            response.innerHTML ="Your account is negative  contact your bank manager"
+        }
+
+        // console.log(response);
+
+    }
+    else{
+        response.innerHTML ="Thank you have a nice day"
+    }
+    
+    
+}
+    </script>
+</body>
+</html>
+
+<!-- On Thu, Aug 11, 2022 at 12:32 PM Quadri Faruk <adeniyiquadri18@gmail.com> wrote: -->
+// let store = document.getElementById('slot');
+// let fastlink = [{phone:"Tecno", amount:"$400"},
+//                 {phone:"Itel", amount:"$300"},
+//                 {phone:"iPhone", amount:"$1000"},
+//                 {phone:"Samsung", amount:"$800"}]
+// for (let i = 0; i < fastlink.length; i++) {
+//     store.innerHTML += `<option>${fastlink[i].phone} ${fastlink[i].amount}</option>`
+//    console.log(fastlink[i]);
+// }
+
+
+let accountDetails = [
+    {AccountName: "Tomiwa", acctNumber: "78222876419"},
+    {AccountName: "Faruq", acctNumber: "0429780038"},
+    {AccountName: "Aisha", acctNumber: "0211191554"},
+    {AccountName: "Temitope", acctNumber: "0691773047"},
+    {AccountName: "Temmy", acctNumber: "0037364268"},
+    {AccountName: "AY", acctNumber: "0112479267"},
+
+] 
+
+function ActiveBtn(event) {
+    var AcctName = document.getElementById("AcccName");
+
+    
+    let userId = event.target.value
+    let message = "";
+    for (let index = 0; index < accountDetails.length; index++) {
+        if(userId.length < 10){
+            message= "is less than the digit"
+        } else if(userId.length > 10){
+            message = "more than the digit"
+        }
+
+        else{
+            if(accountDetails[index].acctNumber ==userId){
+                AcctName.innerHTML = accountDetails[index].AccountName
+                break;
+            }
+            else {
+                message ="invalid account details";
+            }
+        }
+
+        AcctName.innerHTML = message
+        
+    }
+
+
+}
+
+
+
+
+
+function Aisha(event){
+    
+    let response = document.getElementById("response")
+    let balance = document.getElementById("activeAccount").value
+    let bringBalance = document.getElementById("balanceAccount").value
+    let balancesheet = document.getElementById("balanceInput").value
+    let balanceshit = Number(balancesheet)
+
+    // console.log('i am in');
+    
+    if(balance== true){
+        if(bringBalance ==true && balancesheet > 0){
+            response.innerHTML = "Your balance is $" + balanceshit
+
+            // console.log(response);
+        } else if(bringBalance==false){
+            response.innerHTML = "Your account is no longer active"
+        }
+        else if(balancesheet==0){
+            response.innerHTML = "Insufficent fund or your acct is empty"
+        } else if (balancesheet< 0){
+            response.innerHTML ="Your account is negative  contact your bank manager"
+        }
+
+        // console.log(response);
+
+    }
+    else{
+        response.innerHTML ="Thank you have a nice day"
+    }
+    
+    
+}
